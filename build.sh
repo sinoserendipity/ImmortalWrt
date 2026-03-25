@@ -104,16 +104,6 @@ fi
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"
 echo "$PACKAGES"
 
-# 修复 ImmortalWrt 25.12 缺失 opkg-key 的问题
-echo "Checking for opkg-key..."
-mkdir -p scripts
-if [ ! -f scripts/opkg-key ]; then
-    echo "scripts/opkg-key not found, creating a dummy script to bypass check."
-    echo '#!/usr/bin/env bash' > scripts/opkg-key
-    echo 'exit 0' >> scripts/opkg-key
-    chmod +x scripts/opkg-key
-fi
-
 make image PROFILE="generic" PACKAGES="$PACKAGES" FILES="/home/build/immortalwrt/files" ROOTFS_PARTSIZE=$PROFILE
 
 if [ $? -ne 0 ]; then
