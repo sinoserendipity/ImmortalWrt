@@ -6,6 +6,12 @@
 # lucky 应用 项目地址 https://github.com/gdy666/luci-app-lucky
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-lucky"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-lucky-zh-cn"
+
+#新增非常好用的文件管理器 sbwml/luci-app-quickfile
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES bash quickfile luci-app-quickfile luci-i18n-quickfile-zh-cn"
+#高级卸载 by YT Vedio Talk
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-uninstall"
+
 # 首页和网络向导
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-quickstart-zh-cn"
 # 去广告adghome
